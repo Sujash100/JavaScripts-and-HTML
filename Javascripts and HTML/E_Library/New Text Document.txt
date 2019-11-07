@@ -1,0 +1,23 @@
+<%@include file="hmenu.html" %>
+<%@include file="connect.jsp" %>
+
+<%
+String submit="YES";
+   try{
+       int bid=Integer.parseInt(request.getParameter("bid"));
+String cid=request.getParameter("uid");
+
+PreparedStatement pst=con.prepareStatement("update issue_b set submit=? where bid=? and cid=?");
+
+pst.setString(1,submit);
+
+
+
+        int t=pst.executeUpdate();
+	if(t>0)
+	out.println("Issue Updated Successfully");
+	con.close();
+	}
+catch(Exception e){out.println(e);}
+%>
+        

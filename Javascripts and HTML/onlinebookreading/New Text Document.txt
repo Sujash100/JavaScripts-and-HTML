@@ -1,0 +1,27 @@
+<%@include file="hmenu.html" %>
+<%@include file="connect.jsp" %>
+
+<%
+
+String nor=request.getParameter("number");
+String cidate=request.getParameter("date");
+String codate=request.getParameter("date1");
+
+
+	try{
+PreparedStatement pst=con.prepareStatement("insert into checkllist values(?,?,?,?,?,?)");
+pst.setInt(1,hid);
+pst.setString(2,rtype);
+pst.setString(3,rid);
+pst.setString(4,avl);
+pst.setString(5,cidate);
+pst.setString(6,codate);
+
+
+	int t=pst.executeUpdate();
+	if(t>0)
+	out.println("Booking Updated successfully");
+	con.close();
+	}
+	catch(Exception e){}
+%>

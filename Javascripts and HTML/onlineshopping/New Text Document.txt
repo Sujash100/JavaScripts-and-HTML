@@ -1,0 +1,7 @@
+<html>
+<body>  |
+<a href=usercontrolbyadmin.jsp><font color=red>Customer information</a>    |
+<a href=alogout.jsp>Logout</a>
+</body>
+</html>
+<hr>
